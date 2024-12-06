@@ -1,5 +1,4 @@
 #include <ctype.h>
-#include <regex.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -47,9 +46,12 @@ int main(void) {
       i++;
       ptr++;
     }
+
     if (!i)
       continue;
+
     num2[i] = '\0';
+
     if (*ptr != ')')
       continue;
 
