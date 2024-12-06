@@ -1,0 +1,6 @@
+#!/bin/bash
+mkdir day$1
+cd day$1
+cp -r ../template/* .
+cd res
+curl --cookie ../../cookies.txt https://adventofcode.com/2023/day/$1/input > input.txt
