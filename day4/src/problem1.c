@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define INPUT_FILE "../res/input1.txt"
+#define INPUT_FILE "../res/input.txt"
 
-#define COLSIZE 282
+#define COLSIZE 141
 
 static char *lastelm;
 static char *firstelm;
