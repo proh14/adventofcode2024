@@ -2,11 +2,11 @@
 
 #define INPUT_FILE "../res/input.txt"
 
-#define COLS 10
-#define ROWS 10
+#define COLS 50
+#define ROWS 50
 
 #define MAX_ANTINODE 500
-#define MAX_ANTENNA 100
+#define MAX_ANTENNA 500
 
 struct antinode {
   int row;
@@ -42,7 +42,7 @@ void readInput(FILE *fp) {
   }
 }
 
-void findAntennas() {
+void findAntennas(void) {
   for (int i = 0; i < ROWS; i++) {
     for (int j = 0; j < COLS; j++) {
       if (content[i][j] != '.' && content[i][j] != '#' &&
@@ -64,7 +64,7 @@ int doesAntinodeExist(int row, int col) {
 }
 
 void addAntinode(int row, int col) {
-  if (row < 0 || row > ROWS || col < 0 || col > COLS)
+  if (row < 0 || row >= ROWS || col < 0 || col >= COLS)
     return;
   if (doesAntinodeExist(row, col))
     return;
@@ -81,7 +81,7 @@ int findAntenna(char freq, int i) {
   return -1;
 }
 
-void findAntinodes() {
+void findAntinodes(void) {
   int j = 0;
   for (int i = 0; i < antenna_size; i++) {
     while (1) {
@@ -89,7 +89,7 @@ void findAntinodes() {
       if (j == -1)
         break;
       if (j == i) {
-        j += 1;
+        j++;
         continue;
       }
       int dc = antennas[i].col - antennas[j].col;
@@ -97,7 +97,7 @@ void findAntinodes() {
       int antic = antennas[i].col + dc;
       int antir = antennas[i].row + dr;
       addAntinode(antir, antic);
-      j += 1;
+      j++;
     }
   }
 }
@@ -109,7 +109,7 @@ int main(void) {
   findAntennas();
   findAntinodes();
 
-  printf("Answer = %d :)", antinode_size);
+  printf("Answer = %d :)\n", antinode_size);
 
   fclose(fp);
   return 0;
