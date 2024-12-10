@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,7 +9,7 @@ int content_size = 0;
 int content_cap = 40000;
 int freespaces = 0;
 
-void allocateSpace() {
+void allocateSpace(void) {
   content_cap *= 2;
   content = realloc(content, sizeof(int) * content_cap);
 }
@@ -46,7 +47,6 @@ int lastDisk(int last) {
 
 void moveSpaces(void) {
   int last = lastDisk(content_size - 1);
-  int moved = 0;
   for (int i = 0; i < content_size; i++) {
     if (last <= i)
       break;
@@ -54,14 +54,13 @@ void moveSpaces(void) {
       content[i] = content[last];
       content[last] = -1;
       last = lastDisk(last - 1);
-      moved++;
     }
   }
 }
 
-int calculateChecksum(void) {
+uint64_t calculateChecksum(void) {
   int i = 0;
-  int ans = 0;
+  uint64_t ans = 0;
   while (content[i] != -1) {
     ans += content[i] * i;
     i++;
@@ -75,7 +74,7 @@ int main(void) {
   readFile(fp);
   moveSpaces();
 
-  printf("Answer = %d :)\n", calculateChecksum());
+  printf("Answer = %lu :)\n", calculateChecksum());
 
   free(content);
   fclose(fp);
