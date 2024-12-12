@@ -1,7 +1,7 @@
 CC := gcc
 SRC_DIR := ./src
 BUILD_DIR := ./build
-CFLAGS := -MMD -MP -Wall -g -Wextra -pedantic -std=c99
+CFLAGS := -MMD -MP -Wall -g -Wextra -pedantic -std=c99 -I./src/
 SRCS := $(wildcard $(SRC_DIR)/*.c)
 OBJS := $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/src/%.o, $(SRCS))
 DEPS := $(OBJS:.o=.d)

@@ -5,3 +5,4 @@
 -MMD
 -MP
 -g
+-I./src/
