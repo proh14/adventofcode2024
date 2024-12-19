@@ -15,7 +15,7 @@ struct data {
 };
 
 struct priorityQueue {
-  struct data items[MAX_DATA];
+  struct data *items;
   int size;
 };
 

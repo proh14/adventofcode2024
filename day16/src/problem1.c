@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #define IMPLEMENT_PRIORITYQUEUE_H
 #include <priorityqueue.h>
@@ -46,6 +47,7 @@ int directionToNumber(int dy, int dx) {
 
 int performDijkstra(void) {
   struct priorityQueue pq = {0};
+  pq.items = malloc(sizeof(struct data) * MAX_DATA);
   enqueue(&pq, (struct data){cr, cc, 0, 1, 0});
 
   while (pq.size > 0) {
@@ -53,8 +55,10 @@ int performDijkstra(void) {
     int dir = directionToNumber(item.dr, item.dc);
     seen[item.cr][item.cc][dir] = 1;
 
-    if (content[item.cr][item.cc] == 'E')
+    if (content[item.cr][item.cc] == 'E') {
+      free(pq.items);
       return item.cost;
+    }
 
     int clockwise = (dir + 1) % 4;
     int counterclockwise = (dir + 3) % 4;
@@ -78,6 +82,7 @@ int performDijkstra(void) {
     }
   }
 
+  free(pq.items);
   return -1;
 }
 
