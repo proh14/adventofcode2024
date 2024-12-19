@@ -279,6 +279,7 @@ void freeMemory(void) {
     for (int j = 0; j < COLS; j++) {
       free(visited[i][j]);
     }
+    free(visited[i]);
   }
   free(visited);
 }
