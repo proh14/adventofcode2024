@@ -42,6 +42,13 @@ void readFile(FILE *fp) {
 }
 
 int oprandFromCombo(int combo) {
+
+  // Combo operands 0 through 3 represent literal values 0 through 3.
+  // Combo operand 4 represents the value of register A.
+  // Combo operand 5 represents the value of register B.
+  // Combo operand 6 represents the value of register C.
+  // Combo operand 7 is reserved and will not appear in valid programs.
+
   switch (combo) {
   case 0:
     return 0;
@@ -72,12 +79,6 @@ int executeInstruction(int instr, int oprand) {
   // Instruction 5: out: prints combo oprand % 8
   // Instruction 6: bdv: B = B >> combo oprand
   // Instruction 7: cdv: C = A >> combo oprand
-
-  // Combo operands 0 through 3 represent literal values 0 through 3.
-  // Combo operand 4 represents the value of register A.
-  // Combo operand 5 represents the value of register B.
-  // Combo operand 6 represents the value of register C.
-  // Combo operand 7 is reserved and will not appear in valid programs.
 
   int ipInc = 2;
   switch (instr) {
