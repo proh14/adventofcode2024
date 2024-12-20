@@ -104,13 +104,6 @@ int main(void) {
 
   printf("Answer = %d :)\n", performBFS(0, 0, ROWS - 1, COLS - 1));
 
-  for (int i = 0; i < ROWS; i++) {
-    for (int j = 0; j < COLS; j++) {
-      printf("%c", map[i][j]);
-    }
-    printf("\n");
-  }
-
   freeMap();
   fclose(fp);
   return 0;
