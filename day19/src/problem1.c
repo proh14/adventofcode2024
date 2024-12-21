@@ -50,8 +50,7 @@ int CountValidDesigns(FILE *fp) {
   int count = 0;
   char buffer[MAX_BUFFER];
   while (fgets(buffer, MAX_BUFFER, fp) != NULL) {
-    int ans = isValidDesign(buffer);
-    count += ans;
+    count += isValidDesign(buffer);
   }
   return count;
 }
