@@ -70,7 +70,6 @@ void comboToSequence(char *seq, char *combo) {
     i++;
   }
   seq[j] = '\0';
-  printf("%s\n", seq);
 }
 
 void sequenceToSequence(char *from, char *to) {
@@ -89,7 +88,6 @@ void sequenceToSequence(char *from, char *to) {
     i++;
   }
   to[j] = '\0';
-  printf("%s\n", to);
 }
 
 int calculateComplexity(FILE *fp) {
