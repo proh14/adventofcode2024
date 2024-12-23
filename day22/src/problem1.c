@@ -25,7 +25,7 @@ int main(void) {
     }
     ans += secret;
   }
-  printf("%lu\n", ans);
+  printf("Answer = %lu :)\n", ans);
 
   fclose(fp);
   return 0;
