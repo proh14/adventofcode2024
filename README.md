@@ -9,6 +9,10 @@ Libraries I used: *uthash* and *z3 (for day17 part 2)*
 ![Advent of Code 2024 Calendar](./calendar.gif)
 
 
-### Small todo for me:
+
+
+### Huge thanks to [Advent of code](adventofcode.com) for their incredible problems!
+
+##### Small todo for me:
 - Optimize Day 6 part 2 (has 10 min runtime on my device ;-;)
 - Make a general day 17 part 2 solution
