@@ -4,15 +4,13 @@ This repo contains my solutions to all AOC 2024 problems! Since this is the firs
 
 Libraries I used: *uthash* and *z3 (for day17 part 2)*
 
+##### Small todo for me:
+- Optimize Day 6 part 2 (has 10 min runtime on my device ;-;)
+- Make a general day 17 part 2 solution
+
 ##### Merry Christmas and enjoy :D
 
 ![Advent of Code 2024 Calendar](./calendar.gif)
 
 
-
-
-### Huge thanks to [Advent of code](adventofcode.com) for their incredible problems!
-
-##### Small todo for me:
-- Optimize Day 6 part 2 (has 10 min runtime on my device ;-;)
-- Make a general day 17 part 2 solution
+### Huge thanks to [Advent of code](adventofcode.com) for their incredible event!
