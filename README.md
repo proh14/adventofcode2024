@@ -13,4 +13,4 @@ Libraries I used: *uthash* and *z3 (for day17 part 2)*
 ![Advent of Code 2024 Calendar](./calendar.gif)
 
 
-### Huge thanks to [Advent of code](adventofcode.com) for their incredible event!
+### Huge thanks to [Advent of code](https://adventofcode.com) for their incredible event!
